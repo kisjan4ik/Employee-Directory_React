@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
+import Headings from "./Headings";
+import Navbar from "./Navbar";
 import API from "../utils/API";
 
 class SearchResultContainer extends Component {
@@ -32,11 +34,13 @@ class SearchResultContainer extends Component {
   render() {
     return (
       <div>
+        <Headings />
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
+        <Navbar />
         <ResultList results={this.state.results} />
       </div>
     );
